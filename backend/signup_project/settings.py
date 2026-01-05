@@ -155,12 +155,32 @@ REST_FRAMEWORK = {
 }
 
 # CORS settings
+# CORS settings
 CORS_ALLOWED_ORIGINS = [
     "https://signupfrtend.vercel.app",
 ]
 
-
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "authorization",
+    "x-csrftoken",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://signupfrtend.vercel.app",
+]
+
 
 # Email Configuration
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
