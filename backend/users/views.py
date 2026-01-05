@@ -1,5 +1,7 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
 from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
@@ -51,8 +53,9 @@ def validate_password(password):
     """Validate password (at least 8 characters)"""
     return len(password) >= 8
 
-@csrf_exempt
 @api_view(['POST'])
+@permission_classes([AllowAny])
+@method_decorator(csrf_exempt, name='dispatch')
 def signup(request):
     """
     User registration endpoint
