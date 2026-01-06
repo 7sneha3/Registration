@@ -24,7 +24,7 @@ def get_db():
             socketTimeoutMS=30000,
         )
         # Test the connection
-        client.admin.command('ping')
+        # client.admin.command('ping')
         db = client[settings.MONGODB_DB_NAME]
         return db
     except Exception as e:
