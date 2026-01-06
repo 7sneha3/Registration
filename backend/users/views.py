@@ -160,17 +160,17 @@ We're excited to have you on board!
 Best regards,
 The Team
             """
-            
-            send_mail(
-                subject,
-                message,
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-                fail_silently=False,
-            )
-        except Exception as e:
-            # Log email error but don't fail registration
-            print(f"Error sending email: {str(e)}")
+            # commented at 4:19pm
+        #     send_mail(
+        #         subject,
+        #         message,
+        #         settings.DEFAULT_FROM_EMAIL,
+        #         [email],
+        #         fail_silently=False,
+        #     )
+        # except Exception as e:
+        #     # Log email error but don't fail registration
+        #     print(f"Error sending email: {str(e)}")
         
         return Response(
             {
